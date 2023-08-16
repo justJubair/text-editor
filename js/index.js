@@ -1,3 +1,4 @@
+// text bold, italic and underline section
 let isTextBold = false;
 
 // apply text bold function
@@ -80,7 +81,7 @@ function applyTextUnderline() {
     if(inputText === '') {
         alert('Input field is empty');
         return;
-    }
+    };
     textUnderline.classList.add('bg-violet-800', 'text-white');
     inputElement.style.textDecoration = 'underline';
     isTextUnderline = true;
@@ -105,5 +106,125 @@ document.getElementById('underline').addEventListener('click', () => {
          applyTextUnderline();
     }
  });
+
+
+// text alignment section
+
+// text left alignment section
+let isTextLeft = false;
+
+//apply text align left function
+function applyTextAlignLeft() {
+    const alignLeft = document.getElementById('align-left');
+    const inputElement = document.getElementById('text-input');
+    const inputText = inputElement.value;
+    if(inputText === '') {
+        alert('Input field is empty');
+        return;
+    }
+    inputElement.style.textAlign = 'left';
+    alignLeft.classList.add('bg-blue-800', 'text-white');
+
+    isTextLeft = true;
+}
+
+// unapply text align left function
+function unapplyTextAlignLeft() {
+    const alignLeft = document.getElementById('align-left');
+    const inputElement = document.getElementById('text-input');
+
+    inputElement.style.textAlign = '';
+    alignLeft.classList.remove('bg-blue-800', 'text-white');
+    isTextLeft = false;
+}
  
- 
+//  event listener on text align left button
+document.getElementById('align-left').addEventListener('click', ()=> {
+    if(isTextLeft) {
+        unapplyTextAlignLeft()
+    } else {
+        applyTextAlignLeft();
+    }
+})
+
+// text center alignment section
+let isTextCenter = false;
+
+// text center apply function
+function applyTextCenter() {
+    const alignCenter = document.getElementById('align-center');
+    const inputElement = document.getElementById('text-input');
+    const inputText = inputElement.value;
+    if(inputText === '') {
+        alert('Input field is empty');
+        return;
+    }
+    inputElement.style.textAlign = 'center';
+    alignCenter.classList.add('bg-blue-800', 'text-white');
+    isTextCenter = true;
+}
+
+// text center unapply function
+function unapplyTextCenter() {
+    const alignCenter = document.getElementById('align-center');
+    const inputElement = document.getElementById('text-input');
+
+    inputElement.style.textAlign = '';
+    alignCenter.classList.remove('bg-blue-800', 'text-white');
+    isTextCenter = false;
+}
+
+// add event listener on align center button
+document.getElementById('align-center').addEventListener('click', () => {
+    if(isTextCenter) {
+        unapplyTextCenter();
+    } else {
+        applyTextCenter();
+    }
+});
+
+
+// text right alignment section
+let isTextRight = false;
+
+// text right apply function
+function applyTextRight() {
+    const alignRight = document.getElementById('align-right');
+    const inputElement = document.getElementById('text-input');
+    const inputText = inputElement.value;
+    if(inputText === '') {
+        alert('Input field is empty');
+        return;
+    }
+    inputElement.style.textAlign = 'right';
+    alignRight.classList.add('bg-blue-800', 'text-white');
+    isTextRight = true;
+}
+
+// text right unapply function
+function unapplyTextRight() {
+    const alignRight = document.getElementById('align-right');
+    const inputElement = document.getElementById('text-input');
+
+    inputElement.style.textAlign = '';
+    alignRight.classList.remove('bg-blue-800', 'text-white');
+    isTextRight = false;
+}
+
+// add event listener on align center button
+document.getElementById('align-right').addEventListener('click', () => {
+    if(isTextRight) {
+        unapplyTextRight();
+    } else {
+        applyTextRight();
+    }
+});
+
+
+// font size section
+document.getElementById('font-size').addEventListener('click', (e) => {
+    if(e.target.value < 16) {
+        alert('This is the smallest you can go')
+        e.target.value = 16;
+    }
+})
