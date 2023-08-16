@@ -239,3 +239,11 @@ document.getElementById('font-size').addEventListener('click', (e) => {
     
     inputElement.style.fontSize = newFontSize;
 });
+
+// color picker section
+document.getElementById('color-picker').addEventListener('mouseleave', (e) => {
+        console.log(e.target.value)
+        const newColor = e.target.value;
+        const inputElement = document.getElementById('text-input');
+        inputElement.style.color = newColor
+})
