@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwindcss cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome kit -->
+    <script
+      src="https://kit.fontawesome.com/877142f5f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Text Editor</title>
+  </head>
+  <body>
+    <section>
+      <div class="bg-sky-500 w-9/12 mx-auto my-12 shadow-2xl p-11">
+        <h1 class="text-3xl font-medium text-center mb-6">My Text Editor</h1>
+        <!-- main container -->
+        <div class="bg-sky-300 border-2 border-black w-full mx-auto">
+          <!-- functionality container -->
+          <div class="flex justify-evenly items-center mt-4">
+            <!-- text transform container -->
+            <div class="flex gap-6 items-center">
+              <i
+                id="bold"
+                class="fas fa-bold p-2 hover:bg-violet-800 hover:text-white hover:cursor-pointer"
+              ></i>
+              <i id="italic" class="fas fa-italic p-2 hover:bg-violet-800 hover:text-white hover:cursor-pointer"></i>
+              <i id="underline" class="fas fa-underline p-2 hover:bg-violet-800 hover:text-white hover:cursor-pointer"></i>
+            </div>
+            <!-- text alignment container -->
+            <div class="flex gap-6 items-center">
+              <i id="align-center" class="fas fa-align-center"></i>
+              <i id="align-right" class="fas fa-align-right"></i>
+            </div>
+            <!-- font size and color picker -->
+            <div class="flex items-center gap-6">
+              <input
+                id="font-size"
+                class="w-[3rem]"
+                type="number"
+                name=""
+                value="16"
+              />
+              <input type="color" name="" id="" />
+            </div>
+          </div>
+          <hr class="m-3 border-black border" />
+          <!-- textarea container -->
+          <div class="m-4">
+            <textarea
+              id="text-input"
+              class="w-full"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/index.js"></script>
+  </body>
+</html>
