@@ -223,8 +223,19 @@ document.getElementById('align-right').addEventListener('click', () => {
 
 // font size section
 document.getElementById('font-size').addEventListener('click', (e) => {
+    const inputElement = document.getElementById('text-input');
+    const inputText = inputElement.value;
     if(e.target.value < 16) {
         alert('This is the smallest you can go')
         e.target.value = 16;
+    } else if(inputText === '') {
+       alert('Text field is empty')
+       e.target.value = 16;
     }
-})
+
+    const indexFont = (e.target.value);
+    const newFontSize = indexFont + 'px';
+    console.log(newFontSize)
+    
+    inputElement.style.fontSize = newFontSize;
+});
