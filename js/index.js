@@ -68,5 +68,42 @@ document.getElementById('italic').addEventListener('click', () => {
     } else {
          applyTextItalic();
     }
- })
+ });
+
+
+ let isTextUnderline = false;
+// apply text italic function
+function applyTextUnderline() {
+    const inputElement = document.getElementById('text-input');
+    const inputText = inputElement.value;
+    const textUnderline = document.getElementById('underline');
+    if(inputText === '') {
+        alert('Input field is empty');
+        return;
+    }
+    textUnderline.classList.add('bg-violet-800', 'text-white');
+    inputElement.style.textDecoration = 'underline';
+    isTextUnderline = true;
+}
+
+// unapply text italic function
+function unapplyTextUnderline() {
+    const inputElement = document.getElementById('text-input');
+    const textUnderline = document.getElementById('underline');
+
+    textUnderline.classList.remove('bg-violet-800', 'text-white');
+    
+    inputElement.style.textDecoration = 'none';
+    isTextUnderline = false;
+}
+
+// add event listener on italic button
+document.getElementById('underline').addEventListener('click', () => {
+    if(isTextUnderline) {
+         unapplyTextUnderline();
+    } else {
+         applyTextUnderline();
+    }
+ });
+ 
  
